@@ -1,5 +1,5 @@
 /**
- * $Id: mqproducer.c 133 2012-01-18 13:35:04Z tufan $
+ * $Id: mqproducer.c 169 2012-02-21 10:07:29Z tufan $
  *
  * mqproducer -s <size> -n <iterations> -f <frequency>
  *            -t <topicname> -q <qos> -d <debuglevel> -h <broker-host> -p <broker-port>
@@ -61,15 +61,15 @@ static Args mq_args;
  * print_usage
  */
 static void print_usage () {
-	fprintf (stderr, "Usage: mqconsumer -t <topicname> "
-			                          "[-q <qos> (0-2)] "
-			                          "[-d <debuglevel> (0-3)] "
-									  "[-s <payloadsize> (256B)]"
-									  "[-f <publish-frequency> (1Hz)]"
-									  "[-n <number-of-messages> (1000)]"
-			                          "[-h <broker-host> (localhost)] "
-			                          "[-p <broker-port> (1883)]"
-									  "-? (prints out this usage)");
+	fprintf (stderr, "Usage: mqproducer -t <topicname>\n"
+			         "                  [-q <qos> (0-2)]\n"
+			         "                  [-d <debuglevel> (0-3)]\n"
+				     "                  [-s <payloadsize> (256B)]\n"
+				     "                  [-f <publish-frequency> (1Hz)]\n"
+				     "                  [-n <number-of-messages> (1000)]\n"
+			         "                  [-h <broker-host> (localhost)]\n"
+			         "                  [-p <broker-port> (1883)]\n"
+				     "                  -? (prints out this usage)\n");
 }
 
 /**

@@ -1,0 +1,50 @@
+
+mosquitto open source mqtt broker test programs that measures message delivery jitter.
+
+Compiled, run and tested on Linux (CentOS 5.6) and MacOS X (Lion) platforms. Should compile and run on other platforms where mosquitto is ported.
+
+Requirements:
+  Reasonable C compiler (GCC)
+  mosquitto >= 0.13
+  sqlite3
+  make (GNU Make >=3.81)
+
+mqproducer: 
+-----------
+Produces the topic messages with given qos, payload size and frequency. Last topic message is send without payload to flag consumers that "this is the last topic message".
+
+Usage: mqproducer -t <topicname>
+                  [-q <qos> (0-2)]
+                  [-d <debuglevel> (0-3)]
+                  [-s <payloadsize> (256B)]
+                  [-f <publish-frequency> (1Hz)]
+                  [-n <number-of-messages> (1000)]
+                  [-h <broker-host> (localhost)]
+                  [-p <broker-port> (1883)]
+                  -? (prints out this usage)
+mqconsumer:
+-----------
+Simply consumes the topic which is not empty and stops consuming when recevies an empty topic message (i.e empty payload). Calculates and dumps the min/max/average packet delivery transmit and receive jitters.
+
+Usage: mqconsumer -t <topicname>
+                  [-q <qos> (0-2)]
+                  [-d <debuglevel> (0-3)]
+                  [-h <broker-host> (localhost)]
+                  [-p <broker-port> (1883)]
+                  -? (prints out this usage)
+sqconsumer:
+-----------
+This program is used for multiple producer one consumer tests.  
+
+Subscribes to all topics with name "<topicname>" (topic name should be in the form of '<topic>/+', like 'test/+' without quotes) and stored them in an in-memory sqlite database for further jitter calculations. When it receives <num-topic-types> number of empty topic messages stops consuming and disconnects from the broker. Calculates and dumps the min/max/average packet delivery transmit and receive jitters. 
+
+Usage: sqconsumer -t <topicname>
+                 [-n <num-topic-types> (1)]
+                 [-q <qos> (0-2)]
+                 [-d <debuglevel> (0-3)]
+                 [-h <broker-host> (localhost)]
+                 [-p <broker-port> (1883)]
+                 -? (prints out this usage)
+
+--- 
+Tufan ORUK

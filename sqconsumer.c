@@ -1,5 +1,5 @@
 /**
- * $Id: sqconsumer.c 167 2012-02-21 08:51:45Z tufan $
+ * $Id: sqconsumer.c 169 2012-02-21 10:07:29Z tufan $
  *
  * sqconsumer -t <topicname> -q <qos> -d <debuglevel> -h <host> -p <port>
  *            -n <num-topic-types>
@@ -90,13 +90,13 @@ static sqlite3_stmt* mq_select_topic_names_stmt = 0;
  * print_usage
  */
 static void print_usage () {
-	fprintf (stderr, "Usage: sqconsumer -t <topicname> "
-									  "[-n <num-topic-types> (1)] "
-			                          "[-q <qos> (0-2)] "
-			                          "[-d <debuglevel> (0-3)] "
-			                          "[-h <broker-host> (localhost)] "
-			                          "[-p <broker-port> (1883)] "
-									  "-? (prints out this usage)\n");
+	fprintf (stderr, "Usage: sqconsumer -t <topicname>\n"
+				     "                 [-n <num-topic-types> (1)]\n"
+			         "                 [-q <qos> (0-2)]\n"
+			         "                 [-d <debuglevel> (0-3)]\n"
+			         "                 [-h <broker-host> (localhost)]\n"
+			         "                 [-p <broker-port> (1883)]\n"
+				     "                 -? (prints out this usage)\n");
 }
 
 /**

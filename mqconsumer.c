@@ -1,5 +1,5 @@
 /**
- * $Id: mqconsumer.c 135 2012-01-19 10:06:31Z tufan $
+ * $Id: mqconsumer.c 169 2012-02-21 10:07:29Z tufan $
  *
  * mqconsumer -t <topicname> -q <qos> -d <debuglevel> -h <host> -p <port>
  *
@@ -75,12 +75,12 @@ static DelayStat*  mq_delay_stats = 0;
  * print_usage
  */
 static void print_usage () {
-	fprintf (stderr, "Usage: mqconsumer -t <topicname> "
-			                          "[-q <qos> (0-2)] "
-			                          "[-d <debuglevel> (0-3)] "
-			                          "[-h <broker-host> (localhost)] "
-			                          "[-p <broker-port> (1883)]"
-									  "-? (prints out this usage)");
+	fprintf (stderr, "Usage: mqconsumer -t <topicname>\n"
+			         "                  [-q <qos> (0-2)]\n"
+			         "                  [-d <debuglevel> (0-3)]\n"
+			         "                  [-h <broker-host> (localhost)]\n"
+			         "                  [-p <broker-port> (1883)]\n"
+		             "                  -? (prints out this usage)\n");
 }
 
 /**
