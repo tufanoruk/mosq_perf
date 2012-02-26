@@ -1,10 +1,13 @@
-# $Id: Makefile 167 2012-02-21 08:51:45Z tufan $
+# $Id: Makefile 183 2012-02-26 23:20:52Z tufan $
 #
 # Makefile
 #
 
+# where is mosquitto header and library installed?
+MOSQUITTO ?= /usr/local
+
 CC=cc 
-CFLAGS=-I${MOSQUITTO}/lib  -Wall 
+CFLAGS=-I${MOSQUITTO}/include  -Wall 
 LDFLAGS=-L${MOSQUITTO}/lib -lmosquitto 
 
 
