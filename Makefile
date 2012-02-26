@@ -1,7 +1,10 @@
 # $Id: Makefile 183 2012-02-26 23:20:52Z tufan $
 #
 # Makefile
-#
+# 
+
+## whereis mosquitto 
+#MOSQUITTO ?= /usr/local
 
 # where is mosquitto header and library installed?
 MOSQUITTO ?= /usr/local
@@ -19,7 +22,7 @@ ifeq ($(shell uname -s), Darwin)
 endif
 
 ifeq ($(shell uname -s), Linux)
-	SQLITE3 = /usr/local
+	SQLITE3 ?= /usr/local
 	CPPFLAGS += -DMOSQ_LINUX
 	CFLAGS += -I${SQLITE3}/include
 	LDFLAGS += -L${SQLITE3}/lib -Bstatic -lsqlite3
