@@ -1,4 +1,3 @@
-
 mosquitto open source mqtt broker test programs that measures message delivery jitter.
 
 Compiled, run and tested on Linux (CentOS 5.6) and MacOS X (Lion) platforms. Should compile and run on other platforms where mosquitto is ported.
@@ -11,7 +10,7 @@ Requirements:
 
 mqproducer: 
 -----------
-Produces the topic messages with given qos, payload size and frequency. Last topic message is send without payload to flag consumers that "this is the last topic message".
+Produces the topic messages with given qos, payload size and frequency. Last topic message is send without payload to inform the consumers about the end of message delivery.
 
 Usage: mqproducer -t <topicname>
                   [-q <qos> (0-2)]
