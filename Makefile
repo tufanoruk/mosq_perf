@@ -3,9 +3,6 @@
 # Makefile
 # 
 
-## whereis mosquitto 
-#MOSQUITTO ?= /usr/local
-
 # where is mosquitto header and library installed?
 MOSQUITTO ?= /usr/local
 
