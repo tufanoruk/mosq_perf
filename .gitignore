@@ -1,0 +1,4 @@
+*.o
+mqproducer 
+mqconsumer 
+sqconsumer 
