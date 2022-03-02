@@ -4,3 +4,5 @@ mqconsumer
 sqconsumer 
 mqtt-questions.txt
 to-the-mail-group.txt
+.vscode/
+.vscode/configurationCache.log
